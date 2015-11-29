@@ -1,0 +1,11 @@
+The OPT extension rule should be enforced. Below are 2 arguments from a local STEM worker and my comments:
+
+"There are a lot of Indian outsourcing firms(far more than the number of large companies which are willing to give high salaries to foreign students) who preferentially recruit foreign students on OPT or import foreign workers on H1b to serve as consultants. These consultants do very basic and cheap contractor work for US IT companies."
+
+--- I admit this is a legal loophole in H1B visa. I guess DHS didn't realize these Indian firms will make every effort to push the consultant to abuse H1B, by filing many companies for one person. This loophole incurs the exponential growth of technical immigrants who do not have a degree in US, and many talented students not able to apply for H1B and GC to stay in US due to limited quota, and that's why DHS never erged to increase the quota. But anyway, this has nothing to do with OPT, for OPT is only for US graduated foreign students.
+
+For your second argument, if there were no market for contractors, these firms wouldn't survive. Almost all big and medium companies including FLAG are hiring contractors to save money and avoid legal risks. OPTs and H1s should find a position in any of the companies so that the firms can earn profits. Contractors are paid the same as employees and only lack benefits, and more importantly, hiring by contract does not distinguish working status since it's temporary. In fact, many STEM engineers who are US citizens are contractors. On the other hands, contractor work may not be basic. Again, why should an e-verified company (A promise for OPT extension) pay for a foreigner who has more status instability, higer legal risks, and less fluent English with high salary? Think about it.
+
+"More importantly, US companies which do not find qualified US workers should invest more in training young US people instead of importing foreign labor"
+
+---- Education is a complex and very long-term issue. As I see

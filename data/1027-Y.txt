@@ -1,0 +1,29 @@
+Many US people believe that improving and expanding training
+opportunities for F-1 non immigrant students with STEM degrees 
+are bad for this country. I would like to give an example to 
+demonstrate that not only this idea is terribly wrong, but
+also the idea itself is bad for US.
+
+Let me start with a brief introduction of what RF and microwave engineers do.
+RF and microwave engineers are professionals who really understand
+the behaviors of electromagnetic waves from a few MHz to hundreds of GHz. 
+A tremendous amount of electronic devices, whether it be radars that used in the military, wireless communications (mobile phone, WiFi, etc.), satellite positioning and navigation, and MRI machines for medical imaging, all work in that frequency range. RF and microwave engineers use their knowledge and skills to design, 
+test and maintain these devices, make sure they work well so that
+soldiers can protect the country, doctors can save the lives and
+people can talk to their families, watch videos and play games.
+
+So the question is: are there enough RF and microwave engineers who
+are qualified for this position and also being a citizen? The answer is no.
+RF and microwave companies in the united states can be classified into
+2 major categories: defense contractors and commercial companies. 
+The defense contractors only hire US citizens due to government 
+regulations. Now for the commercial companies, for example my company, 
+the fact is: we have received very few applications of RF and microwave 
+engineers from US citizens, and among them, mostly BS degree with little 
+RF experience. My friend who designs antennas in a Connecticut company 
+also complains about lacking of qualified RF engineers with citizenship.
+
+How can my company(with about 300 employees and mostly US citizens) 
+survive in the global competition and make good products and services 
+to our customers if we have to hire 5 RF engineers from only 3 applicants
+with US citizenship? If we lose and get shut down, w

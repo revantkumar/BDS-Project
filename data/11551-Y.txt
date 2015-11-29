@@ -1,0 +1,7 @@
+I think most people opposing the OPT extension consider only their personal interests, instead of the interests of the companies and the US.
+
+In most cases, STEM projects have very long life-cycle. A project, if started from scratch, usually takes more than one year. Some may even be 3-4 years. If international students can only work for one year, a project is likely to be passed for several times to finish.
+
+However, passing projects will extremely increase the overhead of the project life-cycle. For new grad, they need several months to get clear what previous people do, for example, they need to practice development toolkit, read code, run test, fix bugs... sometimes this period may be as long as more than half a year if the project is large and complex. If they don't have OPT extension, then basically they just have a very short time to improve the project before they have to leave. It will significantly slow down the R&D process. 
+
+Therefore, I strongly support the OPT extension proposal. I couldn't imagine what will the companies be like if there are no international students enrolled in. Please don't forget that these companies and STEM students are the major forces creating this modern world.

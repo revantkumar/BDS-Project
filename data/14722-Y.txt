@@ -1,0 +1,9 @@
+Here is an essay written by Paul Graham: http://paulgraham.com/95.html. Paul Graham is the founder of Y-Combinator, an incubator that funded hundreds of companies including Airbnb and Dropbox, and created tens of thousands of jobs in the process. He points out that foreign worker are not taking jobs from Americans because they are cheap. Here is a quote:
+
+"... if you talk to startups, you find practically every one over a certain size has gone through legal contortions to get programmers into the US, where they then paid them the same as they'd have paid an American. Why would they go to extra trouble to get programmers for the same price? The only explanation is that they're telling the truth: there are just not enough great programmers to go around."
+
+It is an argument for programmers, but it applies to many other high-skilled professions, which this OPT extension targets. The truth is that these highly skilled foreign workers are taking these jobs not because they can take less salary, but because they are competent. You wouldn't hire an incompetent programmer to write codes that control rockets, airplane safety, or banking transaction, American or not. It's too much risk on the line.
+
+Many people assume it is a zero-sum game: if someone gets a job, someone else loses it. It is simply not true. Good workers help accelerate growth of companies, which in return create more jobs and improve people's life quality here in the US. Not to mention many foreign entrepreneurs are creating tons of jobs directly (e.g. Elon Musk, Sergey Brin). If it weren't for a great immigration policy, they won't be able to stay and contribute.
+
+America has a deep root of immigration, and has always opened its doors to top talents of the world. It is what makes America excellent in the past hundred years. Let's keep it that way.

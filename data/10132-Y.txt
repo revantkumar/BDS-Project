@@ -1,0 +1,4 @@
+if(American Dream == human Dream):
+then vote YES for STEM degree Students
+else:
+SuperPower ---> SuperPowerless in next 100 years

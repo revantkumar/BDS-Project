@@ -1,0 +1,24 @@
+"Message from the Director: What May Become of Us?
+
+by Tom Coughlin, IEEE Region 6 Director
+
+Employment for Electrical Engineers and Computer Hardware Engineers:
+
+2002 385,000
+2004 343,000
+2006 382,000
+2011 310,000
+2012 335,000
+2013 300,000
+2014 271,000
+
+This table was derived from four widely quoted articles by Patrick Thibodeau"
+http://www.computerworld.com/author/Patrick-Thibodeau 
+
+As engineering jobs continue their drastic fall, the number of American students enrolled in engineering university programs has followed suit, with students and universities finding that prospects are better in other fields of study.
+
+This is a recent report by the Institute of Electrical and Electronic Engineers, (IEEE), one of the largest professional engineering organization in the world. One of the IEEE's goals is to support the health and well-being of its members and the profession. I understand that Region 6 is the US West coast, including silicon valley.
+
+On a personal note, it is widely and openly acknowledged in Silicon Valley that the US Federal Government's policies relating to the long term emphasis of increasing the supply of low cost labor in the science, technology, engineering, and mathematics (STEM) fields is operating independent of the reality on the ground, under false pretenses. In one case that I was directly involved in first hand, an employer looking to keep a low cost engineer beyond the legal period stipulated in writing that no US-based engineer existed or was available (0!) who combined power electronics design with integrated circuit design. It was laughed about in the lunch room on and off for years as being ludicrous and unethical, as this company already had a team with precisely those capabilities.
+
+Most comments to this site will support the "proposed changes" (they are already a done deal) - those would be the persons who may benefit most from the proposed changes.

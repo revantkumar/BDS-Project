@@ -1,0 +1,15 @@
+As a PhD student do research in the area of Operating System, I have seen many brilliant researchers in our areas. These brilliant researchers, mainly from CMU/UC Berkerley/MIT/Standford/Pricenton/UCSD etc, have made great contributions not only to the research area of operating system, but also to the development of IT industry. 
+
+However, some of these researchers are foreigners that you guys hated. Let me give you a short list of them:
+
+Ion Stoica (http://www.cs.berkeley.edu/~istoica/), full professor of UC Berkerley, inventor of Chord System, which is the greatest contribution to modern peer-to-peer system. Without him, you guys probably will not know what is Napster, and you will not know how to use network-TV channel. He is Romanian. 
+
+Kai Li (https://en.wikipedia.org/wiki/Kai_Li), full professor of Princenton University, noted for his pioneering contributions to Distributed Shared Memory (DSM) and co-founding the leading storage deduplication company Data Domain Inc. which was acquired by EMC Corporation in 2009. He is known as the richest professor in America. He is Chinese.
+
+Sanjay Ghemawat (http://research.google.com/pubs/SanjayGhemawat.html), top research scientist at google, listed as Silicon Valley's top and best programmers. He and Jeff Dean are the inventor of Modern MapReduce Model, which leads to the invention of Hadoop Big Data System. He is Indian.
+
+Matei Zaharia (http://people.csail.mit.edu/matei/), assistant professor of MIT, inventor of Spark System, co-founder and CTO of Databricks. Databricks is known as one of the most promising startup in Silicon Valley. He is Romanian.
+
+Frans Kaashoek (https://pdos.csail.mit.edu/~kaashoek/), a Dutch computer scientist, entrepreneur, and Charles Piper Professor at the Massachusetts Institute of Technology. Student of Andy Tanenbaum. Co-founder of Sightpath Inc. He is Dutch.
+
+Yuanyuan Zhou (https://cseweb.ucsd.edu/~yyzhou/), Qualcomm Chair Professor at University of California, San Diego, Co-founder of Patte
