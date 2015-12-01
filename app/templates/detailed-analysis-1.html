@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>RCA Tool | </title>
+    <title>Detailed Analysis | RCA Tool</title>
 
     <!-- Bootstrap core CSS -->
 
@@ -23,11 +23,8 @@
     <link href="./static/css/icheck/flat/green.css" rel="stylesheet" />
     <link href="./static/css/floatexamples.css" rel="stylesheet" type="text/css" />
 
+
     <script src="./static/js/jquery.min.js"></script>
-    <script src="./static/js/nprogress.js"></script>
-    <script>
-        NProgress.start();
-    </script>
 
     <!--[if lt IE 9]>
         <script src="../assets/js/ie8-responsive-file-warning.js"></script>
@@ -57,6 +54,7 @@
                     </div>
                     <div class="clearfix"></div>
 
+
                     <!-- menu prile quick info -->
                     <div class="profile">
                         <div class="profile_pic">
@@ -71,13 +69,12 @@
 
                     <br />
 
-                    <!-- sidebar menu -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 
                         <div class="menu_section">
                             <h3>&nbsp;</h3>
                             <ul class="nav side-menu">
-                                <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                                <li><a href="/"><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                     <!-- <ul class="nav child_menu" style="display: none">
                                         <li><a href="index.html">Dashboard</a>
                                         </li>
@@ -216,6 +213,9 @@
                         <div class="nav toggle">
                             <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                         </div>
+                        <div class="nav toggle">
+                            <font class="lead">{{tag}}</font>
+                        </div>
 
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
@@ -249,7 +249,7 @@
                                     <li>
                                         <a>
                                             <span class="image">
-                                        <img src="./static/images/img.jpg" alt="Profile Image" />
+                                        <img src="./static/images/gatech.png" alt="Profile Image" />
                                     </span>
                                             <span>
                                         <span>John Smith</span>
@@ -305,7 +305,7 @@
                                     <li>
                                         <div class="text-center">
                                             <a>
-                                                <strong><a href="inbox.html">See All Alerts</strong>
+                                                <strong>See All Alerts</strong>
                                                 <i class="fa fa-angle-right"></i>
                                             </a>
                                         </div>
@@ -323,235 +323,268 @@
 
             <!-- page content -->
             <div class="right_col" role="main">
+                <div class="">
 
-                <!-- top tiles -->
-                <div class="row tile_count">
-                  <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
-                      <div class="left"></div>
-                      <div class="right">
-                          <span class="count_top"><i class="fa fa-comments-o"></i> Comments Fetched</span>
-                          <div class="count">{{cfetched}}</div>
-                          <!-- <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span> -->
+                    <div class="row top_tiles" style="margin: 10px 0;">
+                      <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+                          <div class="left"></div>
+                          <div class="right">
+                              <span class="count_top"><i class="fa fa-comments-o"></i> Total Comments</span>
+                              <div class="count">{{cfetched}}</div>
+                              <!-- <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span> -->
+                          </div>
                       </div>
-                  </div>
-                  <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
-                      <div class="left"></div>
-                      <div class="right">
-                          <span class="count_top"><i class="fa fa-user"></i> Comments Porcessed</span>
-                          <div class="count">{{cprocessed}}</div>
-                          <!-- <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span> -->
+                      <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+                          <div class="left" ></div>
+                          <div class="right">
+                              <span class="count_top"><i class="fa fa-file-word-o"></i> Unique Words</span>
+                              <div class="count">7,325</div>
+                              <!-- <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span> -->
+                          </div>
                       </div>
-                  </div>
-                    <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
-                        <div class="left"></div>
-                        <div class="right">
-                            <span class="count_top"><i class="fa fa-file-word-o"></i> Unique Words</span>
-                            <div class="count">500</div>
-                            <!-- <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span> -->
-                        </div>
-                    </div>
-                    <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
-                        <div class="left"></div>
-                        <div class="right">
-                            <span class="count_top"><i class="fa fa-user"></i> Unique First Names</span>
-                            <div class="count green">93,825</div>
-                            <!-- <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span> -->
-                        </div>
-                    </div>
-                    <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
-                        <div class="left" style="width:10%;"></div>
-                        <div class="right">
-                            <span class="count_top"><i class="fa fa-user"></i> Unique Last Names</span>
-                            <div class="count">151,912</div>
-                            <!-- <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span> -->
-                        </div>
-                    </div>
-
-                    <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
-                        <div class="left"></div>
-                        <div class="right">
-                            <span class="count_top"><i class="fa fa-comments-o"></i> Active Processes</span>
-                            <div class="count">{{acount}}</div>
-                            <!-- <span class="count_bottom"><i class="green">4% </i> From last Week</span> -->
-                        </div>
-                    </div>
-
-                </div>
-                <!-- /top tiles -->
-
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="row">
-                          <br /><br /><br />
-
-                          <form class="form-horizontal form-label-left input_mask" style="margin-left:250px;" method="post" action="/start-analysis">
-
-                            <div class="col-md-5 col-md-offset-4 form-group has-feedback">
-                                <input type="text" class="form-control has-feedback-left" name="docketlink" id="inputSuccess2" placeholder="Docket Link from regulations.gov ...">
-                                <span class="fa fa-external-link form-control-feedback left" aria-hidden="true"></span>
+                        <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+                            <div class="left"></div>
+                            <div class="right">
+                                <span class="count_top"><i class="fa fa-user"></i> Unique First Names</span>
+                                <div class="count green">93,825</div>
+                                <!-- <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span> -->
                             </div>
-
-                            <div class="col-md-2 form-group has-feedback">
-                                <input type="text" class="form-control" id="inputSuccess3" name="dockettag" placeholder="Tag">
-                                <span class="fa fa-tag form-control-feedback right" aria-hidden="true"></span>
-                            </div>
-
-                            <div class="col-md-3 form-group has-feedback">
-                                <input type="submit" class="btn btn-primary" value="Submit" />
-                            </div>
-
-
-                        </form>
-
-
                         </div>
-                        <!-- <div class="dashboard_graph">
+                        <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+                            <div class="left" style="width:10%;"></div>
+                            <div class="right">
+                                <span class="count_top"><i class="fa fa-user"></i> Unique Last Names</span>
+                                <div class="count">151,912</div>
+                                <!-- <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span> -->
+                            </div>
+                        </div>
 
-                            <div class="row x_title">
-                                <div class="col-md-6">
-                                    <h3>Network Activities <small>Graph title sub-title</small></h3>
+                        <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+                            <div class="left"></div>
+                            <div class="right">
+                                <span class="count_top"><i class="fa fa-smile-o"></i> % of Yes</span>
+                                <div class="count"><font class="green">83.37</font></div>
+                                <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
+                            </div>
+                        </div>
+
+                        <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+                            <div class="left"></div>
+                            <div class="right">
+                                <span class="count_top"><i class="fa fa-frown-o"></i> % of No</span>
+                                <div class="count"><font class="red">16.63</font></div>
+                                <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>10% </i> From last Week</span>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="dashboard_graph x_panel">
+                                <div class="row x_title">
+                                    <div class="col-md-6">
+                                        <h3>Top 20 Words <!-- <small>Graph title sub-title</small> --></h3>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                                            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                            <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
-                                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                                        <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
+                                <div class="x_content">
+                                    <div class="demo-container" style="height:470px">
+                                        <div id="placeholder3xx3-18" class="demo-placeholder" style="width: 100%; height:470px;">
+                                          <img src="./static/images/analysis/18.png" height="467px" width="100%"/>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
 
-                            <div class="col-md-9 col-sm-9 col-xs-12">
-                                <div id="placeholder33" style="height: 260px; display: none" class="demo-placeholder"></div>
-                                <div style="width: 100%;">
-                                    <div id="canvas_dahs" class="demo-placeholder" style="width: 100%; height:270px;"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
+
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="x_panel fixed_height_320">
                                 <div class="x_title">
-                                    <h2>Top Campaign Performance</h2>
+                                    <h2><font class="green">Supporting</font> Comments <small></small></h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Settings 1</a>
+                                                </li>
+                                                <li><a href="#">Settings 2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
                                     <div class="clearfix"></div>
                                 </div>
-
-                                <div class="col-md-12 col-sm-12 col-xs-6">
-                                    <div>
-                                        <p>Facebook Campaign</p>
-                                        <div class="">
-                                            <div class="progress progress_sm" style="width: 76%;">
-                                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="80"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p>Twitter Campaign</p>
-                                        <div class="">
-                                            <div class="progress progress_sm" style="width: 76%;">
-                                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60"></div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="x_content">
+                                  <img src="./static/images/analysis/wc1.png" height="237px" width="100%"/>
                                 </div>
-                                <div class="col-md-12 col-sm-12 col-xs-6">
-                                    <div>
-                                        <p>Conventional Media</p>
-                                        <div class="">
-                                            <div class="progress progress_sm" style="width: 76%;">
-                                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p>Bill boards</p>
-                                        <div class="">
-                                            <div class="progress progress_sm" style="width: 76%;">
-                                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
+                        </div>
 
-                            <div class="clearfix"></div>
-                        </div> -->
-                    </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="x_panel fixed_height_320">
+                                <div class="x_title">
+                                    <h2><font color="red">Opposing</font> Comments<small></small></h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Settings 1</a>
+                                                </li>
+                                                <li><a href="#">Settings 2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
 
-                </div>
+                                  <img src="./static/images/analysis/wc2.png" height="237px" width="100%"/>
 
-                <br />
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="row">
-                  <!-- <div class="col-md-12"> -->
-                      <div class="x_panel tile" style="border:none;background-color:transparent;">
-                          <div class="x_title">
-                              <h2>Tracking Comments</h2>
-                              <div class="clearfix"></div>
-                          </div>
-                      </div>
-                  <!-- </div> -->
-                </div>
-                <div class="row top_tiles">
-                  {% for item in analysis %}
-                    <a style="text-decoration:none;" href="/detailed_analysis?id={{item['id']}}">
-                      <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                          <div class="tile-stats">
-                              <div class="icon"><i class="fa fa-comments-o"></i>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="x_panel fixed_height_320">
+                                <div class="x_title">
+                                    <h2>Opposing Words <small>(Not in Supporting)</small></h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Settings 1</a>
+                                                </li>
+                                                <li><a href="#">Settings 2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+
+                                  <img src="./static/images/analysis/wc3.png" height="237px" width="100%"/>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                          <div class="col-md-8">
+                            <div class="row">
+                              <div class="x_panel">
+                                  <div class="x_title">
+                                      <h2><font class="green">Supporting</font> Names</h2>
+                                      <ul class="nav navbar-right panel_toolbox">
+                                          <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                          </li>
+                                          <li class="dropdown">
+                                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                              <ul class="dropdown-menu" role="menu">
+                                                  <li><a href="#">Settings 1</a>
+                                                  </li>
+                                                  <li><a href="#">Settings 2</a>
+                                                  </li>
+                                              </ul>
+                                          </li>
+                                          <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                          </li>
+                                      </ul>
+                                      <div class="clearfix"></div>
+                                  </div>
+                                  <div class="x_content">
+
+                                    <img src="./static/images/analysis/23.png" height="240px" width="100%"/>
+
+                                  </div>
                               </div>
-                              <div class="count">{{item['count']}}</div>
-                              <h3>
-                                {{item['tag']}}
-                                {%if item['status'] != 1 %}
-                                  <i class="fa fa-clock-o"></i>
-                                {% endif %}
-                              </h3>
-                              <p>{{item['link']}}</p>
+                            </div> <!-- row -->
+                            <div class="row">
+                              <div class="x_panel">
+                                  <div class="x_title">
+                                      <h2><font class="red">Opposing</font> Names</h2>
+                                      <ul class="nav navbar-right panel_toolbox">
+                                          <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                          </li>
+                                          <li class="dropdown">
+                                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                              <ul class="dropdown-menu" role="menu">
+                                                  <li><a href="#">Settings 1</a>
+                                                  </li>
+                                                  <li><a href="#">Settings 2</a>
+                                                  </li>
+                                              </ul>
+                                          </li>
+                                          <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                          </li>
+                                      </ul>
+                                      <div class="clearfix"></div>
+                                  </div>
+                                  <div class="x_content">
+
+                                    <img src="./static/images/analysis/24.png" height="240px" width="100%"/>
+
+                                  </div>
+                              </div>
+                            </div>
                           </div>
-                      </div>
-                    </a>
-                  {% endfor %}
-                    <!-- <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="tile-stats">
-                            <div class="icon"><i class="fa fa-comments-o"></i>
+                          <div class="col-md-4">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Occurence Frequency</h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Settings 1</a>
+                                                </li>
+                                                <li><a href="#">Settings 2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                  <img src="./static/images/analysis/25.png" height="400px" width="100%"/>
+                                </div>
                             </div>
-                            <div class="count">179</div>
-
-                            <h3>Topic</h3>
-                            <p>Lorem ipsum psdea itgum rixt.</p>
+                          </div>
                         </div>
+
                     </div>
-                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="tile-stats">
-                            <div class="icon"><i class="fa fa-comments-o"></i>
-                            </div>
-                            <div class="count">179</div>
 
-                            <h3>Topic</h3>
-                            <p>Lorem ipsum psdea itgum rixt.</p>
-                        </div>
-                    </div>
-                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="tile-stats">
-                            <div class="icon"><i class="fa fa-sort-amount-desc"></i>
-                            </div>
-                            <div class="count">179</div>
-
-                            <h3>Topic</h3>
-                            <p>Lorem ipsum psdea itgum rixt.</p>
-                        </div>
-                    </div>
-                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="tile-stats">
-                            <div class="icon"><i class="fa fa-check-square-o"></i>
-                            </div>
-                            <div class="count">179</div>
-
-                            <h3>Topic</h3>
-                            <p>Lorem ipsum psdea itgum rixt.</p>
-                        </div>
-                    </div> -->
                 </div>
-
 
                 <!-- footer content -->
-
                 <footer style="height:31px;">
                     <div class="">
                         <p class="pull-right"> Based on bootstrap</a> |
@@ -560,10 +593,11 @@
                     </div>
                 </footer>
                 <!-- /footer content -->
+
             </div>
             <!-- /page content -->
-
         </div>
+
 
     </div>
 
@@ -576,9 +610,6 @@
 
     <script src="./static/js/bootstrap.min.js"></script>
 
-    <!-- gauge js -->
-    <script type="text/javascript" src="./static/js/gauge/gauge.min.js"></script>
-    <script type="text/javascript" src="./static/js/gauge/gauge_demo.js"></script>
     <!-- chart js -->
     <script src="./static/js/chartjs/chart.min.js"></script>
     <!-- bootstrap progress js -->
@@ -586,11 +617,18 @@
     <script src="./static/js/nicescroll/jquery.nicescroll.min.js"></script>
     <!-- icheck -->
     <script src="./static/js/icheck/icheck.min.js"></script>
+    <!-- gauge js -->
+    <script type="text/javascript" src="./static/js/gauge/gauge.min.js"></script>
+    <script type="text/javascript" src="./static/js/gauge/gauge_demo.js"></script>
     <!-- daterangepicker -->
-    <script type="text/javascript" src="./static/js/moment.min.js"></script>
+    <script type="text/javascript" src="./static/js/moment.min2.js"></script>
     <script type="text/javascript" src="./static/js/datepicker/daterangepicker.js"></script>
+    <!-- sparkline -->
+    <script src="./static/js/sparkline/jquery.sparkline.min.js"></script>
 
     <script src="./static/js/custom.js"></script>
+    <!-- skycons -->
+    <script src="./static/js/skycons/skycons.js"></script>
 
     <!-- flot js -->
     <!--[if lte IE 8]><script type="text/javascript" src="./static/js/excanvas.min.js"></script><![endif]-->
@@ -603,141 +641,113 @@
     <script type="text/javascript" src="./static/js/flot/jquery.flot.stack.js"></script>
     <script type="text/javascript" src="./static/js/flot/curvedLines.js"></script>
     <script type="text/javascript" src="./static/js/flot/jquery.flot.resize.js"></script>
-    <script>
-        $(document).ready(function () {
-            // [17, 74, 6, 39, 20, 85, 7]
-            //[82, 23, 66, 9, 99, 6, 2]
-            var data1 = [[gd(2012, 1, 1), 17], [gd(2012, 1, 2), 74], [gd(2012, 1, 3), 6], [gd(2012, 1, 4), 39], [gd(2012, 1, 5), 20], [gd(2012, 1, 6), 85], [gd(2012, 1, 7), 7]];
-            var data2 = [[gd(2012, 1, 1), 82], [gd(2012, 1, 2), 23], [gd(2012, 1, 3), 66], [gd(2012, 1, 4), 9], [gd(2012, 1, 5), 119], [gd(2012, 1, 6), 6], [gd(2012, 1, 7), 9]];
-            $("#canvas_dahs").length && $.plot($("#canvas_dahs"), [
-                data1, data2
-            ], {
-                series: {
-                    lines: {
-                        show: false,
-                        fill: true
-                    },
-                    splines: {
-                        show: true,
-                        tension: 0.4,
-                        lineWidth: 1,
-                        fill: 0.4
-                    },
-                    points: {
-                        radius: 0,
-                        show: true
-                    },
-                    shadowSize: 2
-                },
-                grid: {
-                    verticalLines: true,
-                    hoverable: true,
-                    clickable: true,
-                    tickColor: "#d5d5d5",
-                    borderWidth: 1,
-                    color: '#fff'
-                },
-                colors: ["rgba(38, 185, 154, 0.38)", "rgba(3, 88, 106, 0.38)"],
-                xaxis: {
-                    tickColor: "rgba(51, 51, 51, 0.06)",
-                    mode: "time",
-                    tickSize: [1, "day"],
-                    //tickLength: 10,
-                    axisLabel: "Date",
-                    axisLabelUseCanvas: true,
-                    axisLabelFontSizePixels: 12,
-                    axisLabelFontFamily: 'Verdana, Arial',
-                    axisLabelPadding: 10
-                        //mode: "time", timeformat: "%m/%d/%y", minTickSize: [1, "day"]
-                },
-                yaxis: {
-                    ticks: 8,
-                    tickColor: "rgba(51, 51, 51, 0.06)",
-                },
-                tooltip: false
-            });
-            function gd(year, month, day) {
-                return new Date(year, month - 1, day).getTime();
-            }
-        });
-    </script>
 
-    <!-- worldmap -->
-    <script type="text/javascript" src="./static/js/maps/jquery-jvectormap-2.0.1.min.js"></script>
-    <script type="text/javascript" src="./static/js/maps/gdp-data.js"></script>
-    <script type="text/javascript" src="./static/js/maps/jquery-jvectormap-world-mill-en.js"></script>
-    <script type="text/javascript" src="./static/js/maps/jquery-jvectormap-us-aea-en.js"></script>
-    <script>
-        $(function () {
-            $('#world-map-gdp').vectorMap({
-                map: 'world_mill_en',
-                backgroundColor: 'transparent',
-                zoomOnScroll: false,
-                series: {
-                    regions: [{
-                        values: gdpData,
-                        scale: ['#E6F2F0', '#149B7E'],
-                        normalizeFunction: 'polynomial'
-                    }]
-                },
-                onRegionTipShow: function (e, el, code) {
-                    el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
-                }
-            });
-        });
-    </script>
-    <!-- skycons -->
-    <script src="./static/js/skycons/skycons.js"></script>
-    <script>
-        var icons = new Skycons({
-                "color": "#73879C"
-            }),
-            list = [
-                "clear-day", "clear-night", "partly-cloudy-day",
-                "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-                "fog"
-            ],
-            i;
-        for (i = list.length; i--;)
-            icons.set(list[i], list[i]);
-        icons.play();
-    </script>
+    <!-- flot -->
 
-    <!-- dashbord linegraph -->
     <script>
-        var doughnutData = [
-            {
-                value: 30,
-                color: "#455C73"
-            },
-            {
-                value: 30,
-                color: "#9B59B6"
-            },
-            {
-                value: 60,
-                color: "#BDC3C7"
-            },
-            {
-                value: 100,
-                color: "#26B99A"
-            },
-            {
-                value: 120,
-                color: "#3498DB"
-            }
+        //random data
+        var d1 = [
+        [0, 1], [1, 9], [2, 6], [3, 10], [4, 5], [5, 17], [6, 6], [7, 10], [8, 7], [9, 11], [10, 35], [11, 9], [12, 12], [13, 5], [14, 3], [15, 4], [16, 9]
     ];
-        var myDoughnut = new Chart(document.getElementById("canvas1").getContext("2d")).Doughnut(doughnutData);
+
+        //flot options
+        var options = {
+            series: {
+                curvedLines: {
+                    apply: true,
+                    active: true,
+                    monotonicFit: true
+                }
+            },
+            colors: ["#26B99A"],
+            grid: {
+                borderWidth: {
+                    top: 0,
+                    right: 0,
+                    bottom: 1,
+                    left: 1
+                },
+                borderColor: {
+                    bottom: "#7F8790",
+                    left: "#7F8790"
+                }
+            }
+        };
+        var plot = $.plot($("#placeholder3xx3"), [{
+            label: "Registrations",
+            data: d1,
+            lines: {
+                fillColor: "rgba(150, 202, 89, 0.12)"
+            }, //#96CA59 rgba(150, 202, 89, 0.42)
+            points: {
+                fillColor: "#fff"
+            }
+                }], options);
     </script>
-    <!-- /dashbord linegraph -->
+    <!-- /flot -->
+    <!--  -->
+    <script>
+        $('document').ready(function () {
+            $(".sparkline_one").sparkline([2, 4, 3, 4, 5, 4, 5, 4, 3, 4, 5, 6, 7, 5, 4, 3, 5, 6], {
+                type: 'bar',
+                height: '40',
+                barWidth: 9,
+                colorMap: {
+                    '7': '#a1a1a1'
+                },
+                barSpacing: 2,
+                barColor: '#26B99A'
+            });
+
+            $(".sparkline_two").sparkline([2, 4, 3, 4, 5, 4, 5, 4, 3, 4, 5, 6, 7, 5, 4, 3, 5, 6], {
+                type: 'line',
+                width: '200',
+                height: '40',
+                lineColor: '#26B99A',
+                fillColor: 'rgba(223, 223, 223, 0.57)',
+                lineWidth: 2,
+                spotColor: '#26B99A',
+                minSpotColor: '#26B99A'
+            });
+
+            var doughnutData = [
+                {
+                    value: 30,
+                    color: "#455C73"
+                },
+                {
+                    value: 30,
+                    color: "#9B59B6"
+                },
+                {
+                    value: 60,
+                    color: "#BDC3C7"
+                },
+                {
+                    value: 100,
+                    color: "#26B99A"
+                },
+                {
+                    value: 120,
+                    color: "#3498DB"
+                }
+    ];
+            // var myDoughnut = new Chart(document.getElementById("canvas1").getContext("2d")).Doughnut(doughnutData);
+
+
+        })
+    </script>
+    <!-- -->
     <!-- datepicker -->
     <script type="text/javascript">
         $(document).ready(function () {
+
             var cb = function (start, end, label) {
                 console.log(start.toISOString(), end.toISOString(), label);
                 $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
                 //alert("Callback has fired: [" + start.format('MMMM D, YYYY') + " to " + end.format('MMMM D, YYYY') + ", label = " + label + "]");
             }
+
             var optionSet1 = {
                 startDate: moment().subtract(29, 'days'),
                 endDate: moment(),
@@ -801,11 +811,92 @@
             });
         });
     </script>
-    <script>
-        NProgress.done();
-    </script>
     <!-- /datepicker -->
-    <!-- /footer content -->
+
+    <!-- moris js -->
+    <script src="./static/js/moris/raphael-min.js"></script>
+    <script src="./static/js/moris/morris.js"></script>
+    <script>
+        $(function () {
+            var day_data = [
+                {
+                    "period": "Jan",
+                    "Hours worked": 80
+                },
+                {
+                    "period": "Feb",
+                    "Hours worked": 125
+                },
+                {
+                    "period": "Mar",
+                    "Hours worked": 176
+                },
+                {
+                    "period": "Apr",
+                    "Hours worked": 224
+                },
+                {
+                    "period": "May",
+                    "Hours worked": 265
+                },
+                {
+                    "period": "Jun",
+                    "Hours worked": 314
+                }
+    ];
+            Morris.Bar({
+                element: 'graph_bar',
+                data: day_data,
+                hideHover: 'always',
+                xkey: 'period',
+                barColors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
+                ykeys: ['Hours worked', 'sorned'],
+                labels: ['Hours worked', 'SORN'],
+                xLabelAngle: 60
+            });
+        });
+    </script>
+    <!-- skycons -->
+    <script>
+        var icons = new Skycons({
+                "color": "#73879C"
+            }),
+            list = [
+                "clear-day", "clear-night", "partly-cloudy-day",
+                "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+                "fog"
+            ],
+            i;
+
+        for (i = list.length; i--;)
+            icons.set(list[i], list[i]);
+
+        icons.play();
+    </script>
+    <script>
+
+        var opts = {
+            lines: 12, // The number of lines to draw
+            angle: 0, // The length of each line
+            lineWidth: 0.4, // The line thickness
+            pointer: {
+                length: 0.75, // The radius of the inner circle
+                strokeWidth: 0.042, // The rotation offset
+                color: '#1D212A' // Fill color
+            },
+            limitMax: 'false', // If true, the pointer will not go past the end of the gauge
+            colorStart: '#1ABC9C', // Colors
+            colorStop: '#1ABC9C', // just experiment with them
+            strokeColor: '#F0F3F3', // to see which ones work best for you
+            generateGradient: true
+        };
+        var target = document.getElementById('foo2'); // your canvas element
+        var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
+        gauge.maxValue = 5000; // set max gauge value
+        gauge.animationSpeed = 32; // set animation speed (32 is default value)
+        gauge.set(3200); // set actual value
+        gauge.setTextField(document.getElementById("gauge-text2"));
+    </script>
 </body>
 
 </html>

@@ -50,7 +50,7 @@
                 <div class="left_col scroll-view">
 
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>RCA Tool</span></a>
+                        <a href="index.html" class="site_title"><i class="fa fa-dashboard"></i> <span>RCA Tool</span></a>
                     </div>
                     <div class="clearfix"></div>
 
@@ -62,7 +62,7 @@
                         </div>
                         <div class="profile_info">
                             <span>Welcome,</span>
-                            <h2>Anthony Fernando</h2>
+                            <h2>BDS@GaTech</h2>
                         </div>
                     </div>
                     <!-- /menu prile quick info -->
@@ -74,7 +74,7 @@
                         <div class="menu_section">
                             <h3>&nbsp;</h3>
                             <ul class="nav side-menu">
-                                <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                                <li><a href="/"><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                     <!-- <ul class="nav child_menu" style="display: none">
                                         <li><a href="index.html">Dashboard</a>
                                         </li>
@@ -197,7 +197,7 @@
                         <a data-toggle="tooltip" data-placement="top" title="Lock">
                             <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
                         </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Logout">
+                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="/logout">
                             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                         </a>
                     </div>
@@ -213,11 +213,14 @@
                         <div class="nav toggle">
                             <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                         </div>
+                        <div class="nav toggle">
+                            <font class="lead">{{tag}}</font>
+                        </div>
 
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="./static/images/img.jpg" alt="">John Doe
+                                    <img src="./static/images/gatech.png" alt="">GaTech
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
@@ -246,7 +249,7 @@
                                     <li>
                                         <a>
                                             <span class="image">
-                                        <img src="./static/images/img.jpg" alt="Profile Image" />
+                                        <img src="./static/images/gatech.png" alt="Profile Image" />
                                     </span>
                                             <span>
                                         <span>John Smith</span>
@@ -320,16 +323,93 @@
 
             <!-- page content -->
             <div class="right_col" role="main">
-                
+                <div class="">
+
+                    <div class="row top_tiles" style="margin: 10px 0;">
+                      <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+                          <div class="left"></div>
+                          <div class="right">
+                              <span class="count_top"><i class="fa fa-comments-o"></i> Total Comments</span>
+                              <div class="count">{{cfetched}}</div>
+                              <!-- <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span> -->
+                          </div>
+                      </div>
+                      <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+                          <div class="left" ></div>
+                          <div class="right">
+                              Currently Processing Stats....
+                              <!-- <span class="count_top"><i class="fa fa-file-word-o"></i> Unique Words</span> -->
+                              <!-- <div class="count">7,325</div> -->
+                              <!-- <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span> -->
+                          </div>
+                      </div>
+
+                    </div>
+                    <br />
+
+
+                    <div class="row">
+
+                      <div class="col-md-12 col-sm-4 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Recent Comments <small></small></h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Settings 1</a>
+                                            </li>
+                                            <li><a href="#">Settings 2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="dashboard-widget-content">
+
+                                    <ul class="list-unstyled timeline widget">
+                                      {% for item in comments %}
+
+                                        <li>
+                                            <div class="block">
+                                                <div class="block_content">
+                                                    <h2 class="title">
+                                            <a>{{item['heading']}}</a>
+                                        </h2>
+                                                    <div class="byline">
+                                                        <!-- <span>13 hours ago</span> by <a>Jane Smith</a> -->
+                                                    </div>
+                                                    <p class="excerpt">{{item['content']}}<br /><a>Read&nbsp;More</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+
+
+                </div>
 
                 <!-- footer content -->
-                <footer>
+                <footer style="height:31px;">
                     <div class="">
-                        <p class="pull-right">Gentelella Alela! a Bootstrap 3 template by <a>Kimlabs</a>. |
-                            <span class="lead"> <i class="fa fa-paw"></i> Gentelella Alela!</span>
+                        <p class="pull-right"> Based on bootstrap</a> |
+                            <span class=""> Developed by BDS Team 1</span>
                         </p>
                     </div>
-                    <div class="clearfix"></div>
                 </footer>
                 <!-- /footer content -->
 
@@ -471,7 +551,7 @@
                     color: "#3498DB"
                 }
     ];
-            var myDoughnut = new Chart(document.getElementById("canvas1").getContext("2d")).Doughnut(doughnutData);
+            // var myDoughnut = new Chart(document.getElementById("canvas1").getContext("2d")).Doughnut(doughnutData);
 
 
         })

@@ -35,14 +35,14 @@ class Fetch:
 				comment_urls.append(row[34])
 
 			index += 1
-		
+
 		print len(comment_urls)
 		self.extract_comments(comment_urls)
 		return 'success'
 
 	def extract_comments(self, comments_url):
 		i = 15000
-		self.empty_dir('../comments')		
+		self.empty_dir('../comments')
 		for url in comments_url:
 			print url
 			res = subprocess.call(['/Users/anurag/study/SEM-3/bds/proj/opt/dataService/phantomjs-2.0.0-macosx/bin/phantomjs', '/Users/anurag/study/SEM-3/bds/proj/opt/dataService/test.js', url, str(i)])
@@ -76,7 +76,7 @@ class Top:
 			text_file = open('../comments/' + path, "r")
 			whole_thing = text_file.read()
 			contents.append(whole_thing)
-		
+
 		size = len(contents)
 		print size
 		if size < 100:
@@ -87,7 +87,7 @@ class Top:
 				print index
 				res.append(contents[index])
 
-			return res		
+			return res
 
 if __name__ == "__main__":
 	app = web.application(urls, globals())
