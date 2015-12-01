@@ -7,6 +7,7 @@ import subprocess
 import uuid
 import os
 import sqlite3
+import request
 # from flask.ext.mysql import MySQL
 # import MySQLdb as mdb
 
@@ -41,6 +42,8 @@ def sendFile(fileName = None):
 @app.route('/index.html')
 @app.route('/', methods=['GET', 'POST', 'REQUEST'])
 def indexMain():
+    requests.get("http://localhost:8080/fetch_comments", params={'url': 'http%3A%2F%2Fwww.regulations.gov%2Fexportdocket%3FdocketId%3DICEB-2015-0002'}
+)
     if 'username' not in session:
         return redirect(url_for('login'))
     cursor, db = get_cursor()
