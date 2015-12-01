@@ -126,7 +126,8 @@ def detailedAnalysis():
 
 
     ## TODO uncomment
-    resp = int(requests.get('http://localhost:8080/get_top').text)
+    resp = requests.get('http://localhost:8080/get_top').text
+    resp = resp.split('~~')
     ## TODO comment
     # resp = "this is a new tag ~~ this is fine ~~ that is fine ~~".split('~~')
     obj_arr = []
