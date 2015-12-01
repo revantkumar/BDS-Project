@@ -15,7 +15,7 @@ import locale
 # import MySQLdb as mdb
 
 app = Flask(__name__)
-locale.setlocale(locale.LC_ALL, 'en_US')
+locale.setlocale(locale.LC_ALL, 'en_US.utf8')
 
 def get_cursor():
     base_dir = os.path.dirname(os.path.realpath(__file__))
@@ -74,8 +74,8 @@ def indexMain():
         active_count = 0
     else:
         active_count = row['cnt']
-        ## TODO uncomment this
-        # resp = int(requests.get('http://localhost:8080/get_count'))
+        # TODO uncomment this
+        resp = int(requests.get('http://localhost:8080/get_count'))
         total_comments += resp
 
 
@@ -120,15 +120,15 @@ def detailedAnalysis():
     cfetched = 0
     comments = ''
     ## TODO uncomment
-    # resp = int(requests.get('http://localhost:8080/get_count'))
-    # if resp:
-    #     cfetched += int(resp)
+    resp = int(requests.get('http://localhost:8080/get_count'))
+    if resp:
+        cfetched += int(resp)
 
 
     ## TODO uncomment
-    # resp = int(requests.get('http://localhost:8080/get_top'))
+    resp = int(requests.get('http://localhost:8080/get_top'))
     ## TODO comment
-    resp = "this is a new tag ~~ this is fine ~~ that is fine ~~".split('~~')
+    # resp = "this is a new tag ~~ this is fine ~~ that is fine ~~".split('~~')
     obj_arr = []
     if resp:
         comments = resp
