@@ -193,10 +193,6 @@ X_data, y_data, cache_data, names_data, file_paths_data = load_data(DATA_ROOT, S
 assert(len(X_data) == len(y_data))
 print("Loaded real data. Total=%d" % len(y_data))
 
-X_data, y_data, cache_data, names_data, file_paths_data = load_data(DATA_ROOT, STOP_WORDS_FILE, extract_names=True, print_every=1000)
-assert(len(X_data) == len(y_data))
-print("Loaded real data. Total=%d" % len(y_data))
-
 # This is the real y_data
 y_eval = test(X_data, P, Pc)
 # Backfill the cache to have proper counts
@@ -334,7 +330,7 @@ for exclude_intl_names in [False, True]:
     plt.plot(np.array(plt_percentiles), np.array(plt_neg_US), label="Negatives among US")
 
     plt.legend(loc='center left', bbox_to_anchor=(1, .5))
-    plt.show()
+    plt.savefig('graphs/Graphs.png', format='png')
 
 
 min_first = np.percentile([occ for name, occ in first_name_cache.iteritems()], percentile)
@@ -486,7 +482,8 @@ autolabel(rects1, ranks_neg)
 autolabel(rects2, ranks_pos)
 
 # plt.tight_layout()
-plt.show()
+#plt.show()
+plt.savefig('graphs/Word-occurence.png', format='png')
 
 
 # Confirm the Zipf's law
@@ -500,7 +497,8 @@ plt.xscale('log')
 plt.xlabel("Rank")
 plt.ylabel("Frequency of occurence")
 plt.plot(np_rank, np_occ)
-plt.show()
+#plt.show()
+plt.savefig('graphs/Log-log-rank.png', format='png')
 
 
 # Stats: Words in -ve reviews that are not in +ve reviews
@@ -571,10 +569,12 @@ for label in labels:
     plt.xticks(index + bar_width, np_names)
     plt.ylabel("Frequency of occurence of names")
     plt.legend()
-    plt.show()
+    #plt.show()
+    #raw_input('Check check 5')
+    plt.savefig("graphs/Frequency-%s-labeled-comments.png" % label, format='png')
 
 
-import dill
-dill.dump(P, open("model/P.p", "wb" ))
-dill.dump(Pc, open("model/Pc.p", "wb" ))
+# import dill
+# dill.dump(P, open("model/P.p", "wb" ))
+# dill.dump(Pc, open("model/Pc.p", "wb" ))
 
