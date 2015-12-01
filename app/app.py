@@ -75,7 +75,7 @@ def indexMain():
     else:
         active_count = row['cnt']
         # TODO uncomment this
-        resp = int(requests.get('http://localhost:8080/get_count'))
+        resp = int(requests.get('http://localhost:8080/get_count').text)
         total_comments += resp
 
 
@@ -120,13 +120,13 @@ def detailedAnalysis():
     cfetched = 0
     comments = ''
     ## TODO uncomment
-    resp = int(requests.get('http://localhost:8080/get_count'))
+    resp = int(requests.get('http://localhost:8080/get_count').text)
     if resp:
         cfetched += int(resp)
 
 
     ## TODO uncomment
-    resp = int(requests.get('http://localhost:8080/get_top'))
+    resp = int(requests.get('http://localhost:8080/get_top').text)
     ## TODO comment
     # resp = "this is a new tag ~~ this is fine ~~ that is fine ~~".split('~~')
     obj_arr = []
