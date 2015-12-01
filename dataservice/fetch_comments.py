@@ -87,7 +87,7 @@ class Top:
 				print index
 				res.append(contents[index])
 
-			return res
+			return "~".join(res)
 
 if __name__ == "__main__":
 	app = web.application(urls, globals())
