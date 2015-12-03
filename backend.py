@@ -445,11 +445,15 @@ def do_stuff(data_path, token, dir_root):
     for pair in freqs[:TOP_K]:
         word, count = pair
         np_words.append(word)
-        np_freq_neg.append((cache_data[word][0]*100)/float(total_neg))
-        np_freq_pos.append((cache_data[word][1]*100)/float(total_pos))
+        if word in cache_data:
+            np_freq_neg.append((cache_data[word][0]*100)/float(total_neg))
+            np_freq_pos.append((cache_data[word][1]*100)/float(total_pos))
         
-        np_rank_pos.append(ranks_pos[word])
-        np_rank_neg.append(ranks_neg[word])
+        if word in ranks_pos:
+            np_rank_pos.append(ranks_pos[word])
+
+        if word in ranks_neg:
+            np_rank_neg.append(ranks_neg[word])
         
     # Plot this.
     index = np.arange(0, TOP_K*2, 2)
@@ -478,9 +482,10 @@ def do_stuff(data_path, token, dir_root):
         for i, rect in enumerate(rects):
             word, count = freqs[i]
             height = rect.get_height()
-            plt.text(rect.get_x() + rect.get_width()/2., 1.05*height,
-                    '%d' % (ranks[word] + 1),
-                    ha='center', va='bottom')
+            if word in ranks:
+                plt.text(rect.get_x() + rect.get_width()/2., 1.05*height,
+                        '%d' % (ranks[word] + 1),
+                        ha='center', va='bottom')
 
     autolabel(rects1, ranks_neg)
     autolabel(rects2, ranks_pos)
