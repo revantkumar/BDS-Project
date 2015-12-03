@@ -63,28 +63,38 @@ def indexMain():
         obj['link'] = row['link']
         obj['status'] = row['status']
         obj['count'] = locale.format("%d", row['total_count'], grouping=True)
+        if row['total_count'] == 0 :
+            resp = int(requests.get('http://localhost:8080/get_count?token=' + str(row['id'])).text)
+            if resp:
+                obj['count'] = locale.format("%d", resp, grouping=True)
+            else:
+                resp = 0
+            total_comments += resp
         obj_arr.append(obj)
         if row['id'] == 1:
             comments_processed = obj['count']
             total_comments = row['total_count']
-    q = "SELECT count(id) cnt FROM active_analysis WHERE status != 1"
-    cursor.execute(q)
-    row = cursor.fetchone()
-    resp = 0
-    totc = 0
-    if not row:
-        active_count = 0
-    else:
-        active_count = row['cnt']
-        # TODO uncomment this
-        resp = int(requests.get('http://localhost:8080/get_count').text)
-        # resp = 0
-        total_comments += resp
-	totc = resp
+    # q = "SELECT count(id) cnt FROM active_analysis WHERE status != 1"
+    # cursor.execute(q)
+    # row = cursor.fetchone()
+    # resp = 0
+    # totc = 0
+    # if not row:
+        # active_count = 0
+    # else:
+    #     resp = int(requests.get('http://localhost:8080/get_count?token=' + str(row['id'])).text)
+    #     if resp:
+    #         active_count = int(resp)
+    #     else:
+    #         resp = int(0)
+    #     # TODO uncomment this
+    #     # resp = 0
+    #     total_comments += resp
+	# totc = resp
 
 
     total_comments = locale.format("%d", total_comments, grouping=True)
-    return render_template('index.html', analysis=obj_arr, acount=active_count, totc=totc, cprocessed = comments_processed, cfetched=total_comments)
+    return render_template('index.html', analysis=obj_arr, acount=active_count, totc=0, cprocessed = comments_processed, cfetched=total_comments)
 
 @app.route('/start-analysis', methods=['GET', 'POST', 'REQUEST'])
 def startAnalysis():
@@ -126,14 +136,14 @@ def detailedAnalysis():
     cfetched = 0
     comments = ''
     ## TODO uncomment
-    resp = int(requests.get('http://localhost:8080/get_count').text)
+    resp = int(requests.get('http://localhost:8080/get_count?token=' + str(analysis_id)).text)
     # resp = 0
     if resp:
         cfetched += int(resp)
 
 
     ## TODO uncomment
-    resp = requests.get('http://localhost:8080/get_top').text
+    resp = requests.get('http://localhost:8080/get_top?token=' + str(analysis_id)).text
     resp = resp.split('~~')
     ## TODO comment
     # resp = "this is a new tag ~~ this is fine ~~ that is fine ~~".split('~~')
