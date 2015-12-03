@@ -41,16 +41,16 @@ class Fetch:
 		return 'success'
 
 	def extract_comments(self, comments_url, token):
-		subprocess.call('rm -r /Users/anurag/study/SEM-3/bds/proj/BDS-Project/comments/' + token, shell=True)
-		subprocess.call('cp -r ../data/ /Users/anurag/study/SEM-3/bds/proj/BDS-Project/comments/' + token, shell=True)
+		#subprocess.call('rm -r /Users/anurag/study/SEM-3/bds/proj/BDS-Project/comments/' + token, shell=True)
+		#subprocess.call('cp -r ../data/ /Users/anurag/study/SEM-3/bds/proj/BDS-Project/comments/' + token, shell=True)
 
 		i = 15000
 		for url in comments_url:
 			print url
 			res = subprocess.call(['/Users/anurag/study/SEM-3/bds/proj/opt/dataService/phantomjs-2.0.0-macosx/bin/phantomjs', '/Users/anurag/study/SEM-3/bds/proj/BDS-Project/dataservice/test.js', url, str(i), token])
 
-			if (i%5 is 0):
-				subprocess.call('python ../backend.py /Users/anurag/study/SEM-3/bds/proj/BDS-Project/comments/' + token + ' ' + token + ' /Users/anurag/study/SEM-3/bds/proj/BDS-Project', shell=True)
+			#if (i%5 is 0):
+			#	subprocess.call('python ../backend.py /Users/anurag/study/SEM-3/bds/proj/BDS-Project/comments/' + token + ' ' + token + ' /Users/anurag/study/SEM-3/bds/proj/BDS-Project', shell=True)
 
 			i += 1
 
@@ -65,7 +65,11 @@ class Count:
 		token = user_data.token
 
 		DIR = '../comments/' + token
-		res = len([name for name in os.listdir(DIR) if os.path.isfile(os.path.join(DIR, name))])
+		try:
+			res = len([name for name in os.listdir(DIR) if os.path.isfile(os.path.join(DIR, name))])
+		except:
+			return 0
+
 		return res
 
 class Top:
@@ -73,13 +77,13 @@ class Top:
 		user_data = web.input()
 		token = user_data.token
 
-		DIR = '../comments/' + token
+		DIR = '../comments/' + token + '/'
 		paths = [name for name in os.listdir(DIR) if os.path.isfile(os.path.join(DIR, name))]
 		contents = []
 		res = []
 
 		for path in paths:
-			text_file = open('../comments/' + path, "r")
+			text_file = open(DIR + path, "r")
 			whole_thing = text_file.read()
 			contents.append(whole_thing)
 

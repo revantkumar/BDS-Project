@@ -55,6 +55,7 @@ def indexMain():
     cursor.execute(q, (session['uid'],))
     rows = cursor.fetchall()
     obj_arr = []
+    active_count = 0
     comments_processed = 0
     for row in rows:
         obj = {}
@@ -64,6 +65,7 @@ def indexMain():
         obj['status'] = row['status']
         obj['count'] = locale.format("%d", row['total_count'], grouping=True)
         if row['total_count'] == 0 :
+            active_count += 1
             resp = int(requests.get('http://localhost:8080/get_count?token=' + str(row['id'])).text)
             if resp:
                 obj['count'] = locale.format("%d", resp, grouping=True)
