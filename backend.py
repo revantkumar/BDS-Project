@@ -8,7 +8,7 @@ import math
 
 from nltk.stem.lancaster import LancasterStemmer
 
-def do_stuff(data_path, token):
+def do_stuff(data_path, token, dir_root):
     '''
     Loads the Congressional Speech Data with labels
     @param root_dir Root directory of the files containing the speech text data
@@ -115,7 +115,9 @@ def do_stuff(data_path, token):
     TEST_ROOT=os.path.join(DATA_ROOT, "test_set")
     STOP_WORDS_FILE="stop-word-list.txt"
     '''
-    DIR_ROOT="/Users/anurag/study/SEM-3/bds/proj/BDS-Project/"
+    #DIR_ROOT="/Users/anurag/study/SEM-3/bds/proj/BDS-Project/"
+
+    DIR_ROOT=""
     MODEL_ROOT=os.path.join(DIR_ROOT, "model")
     TRAIN_ROOT=os.path.join(MODEL_ROOT, "train")
     DEV_ROOT=os.path.join(MODEL_ROOT, "dev")
@@ -124,7 +126,8 @@ def do_stuff(data_path, token):
     DATA_ROOT=os.path.join(DIR_ROOT, data_path)
     FIRST_NAMES_ROOT=os.path.join(DIR_ROOT, "names")
     LAST_NAMES_FILE=os.path.join(DIR_ROOT, "names_census", "app.txt")
-    STOP_WORDS_FILE="/Users/anurag/study/SEM-3/bds/proj/BDS-Project/stop-word-list.txt"
+    #STOP_WORDS_FILE="/Users/anurag/study/SEM-3/bds/proj/BDS-Project/stop-word-list.txt"
+    STOP_WORDS_FILE="stop-word-list.txt"
 
     print("Loading data...")
     # No names in train/dev/test set
@@ -331,7 +334,7 @@ def do_stuff(data_path, token):
         plt.plot(np.array(plt_percentiles), np.array(plt_neg_US), label="Negatives among US")
 
         plt.legend(loc='center left', bbox_to_anchor=(1, .5))
-        plt.savefig('graphs/%s-1.png' % token, format='png')
+        plt.savefig('%s/app/static/images/analysis/0-%s.png' % (dir_root, token), format='png')
 
 
     min_first = np.percentile([occ for name, occ in first_name_cache.iteritems()], percentile)
@@ -484,7 +487,7 @@ def do_stuff(data_path, token):
 
     # plt.tight_layout()
     #plt.show()
-    plt.savefig('graphs/%s-2.png' % token, format='png')
+    plt.savefig('%s/app/static/images/analysis/1-%s.png' % (dir_root, token), format='png')
 
 
     # Confirm the Zipf's law
@@ -499,7 +502,7 @@ def do_stuff(data_path, token):
     plt.ylabel("Frequency of occurence")
     plt.plot(np_rank, np_occ)
     #plt.show()
-    plt.savefig('graphs/%s-3.png' % token, format='png')
+    plt.savefig('%s/app/static/images/analysis/3-%s.png' % (dir_root, token), format='png')
 
 
     # Stats: Words in -ve reviews that are not in +ve reviews
@@ -572,7 +575,7 @@ def do_stuff(data_path, token):
         plt.legend()
         #plt.show()
         #raw_input('Check check 5')
-        plt.savefig("graphs/%s-4-%s.png" % (token, label), format='png')
+        plt.savefig("%s/app/static/images/analysis/2-%s-%s.png" % (dir_root, token, label), format='png')
 
 
 # import dill
@@ -581,7 +584,7 @@ def do_stuff(data_path, token):
 
 
 if __name__ == "__main__":
-    do_stuff(str(sys.argv[1]), str(sys.argv[2]))
+    do_stuff(str(sys.argv[1]), str(sys.argv[2]), str(sys.argv[3]))
 
 
 
