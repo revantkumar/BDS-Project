@@ -55,9 +55,9 @@ page.open(url, function(s) { // open the file
             }
         });
         try {
-        	console.log(data["name"].replace("Comment Submitted by ", ""));
-        	fs.write(output, data["comment"], 'w');    
-		console.log(data["comment"]);
+        	//console.log(data["name"].replace("Comment Submitted by ", ""));
+        	fs.write(output, data["name"].replace("Comment Submitted by ", "") + ' ' + data["comment"], 'w');    
+		//console.log(data["comment"]);
         } catch (e) {
             //pass
         }
