@@ -8,15 +8,12 @@ import random
 
 urls = (
 	'/fetch_comments', 'Fetch',
-	'/test', 'Test',
 	'/get_count', 'Count',
 	'/get_top', 'Top'
 )
 
 class Fetch:
 	def GET(self):
-		subprocess.call('python ../backend.py', shell=True)
-
 		user_data = web.input()
 		url = user_data.url
 		token = user_data.token
@@ -47,19 +44,17 @@ class Fetch:
 		i = 15000
 		for url in comments_url:
 			print url
-			res = subprocess.call(['/Users/anurag/study/SEM-3/bds/proj/opt/dataService/phantomjs-2.0.0-macosx/bin/phantomjs', '/Users/anurag/study/SEM-3/bds/proj/opt/dataService/test.js', url, str(i), token])
+			res = subprocess.call(['/Users/anurag/study/SEM-3/bds/proj/opt/dataService/phantomjs-2.0.0-macosx/bin/phantomjs', '/Users/anurag/study/SEM-3/bds/proj/BDS-Project/dataservice/test.js', url, str(i), token])
+
+			if (i%5 is 0):
+				subprocess.call('python ../backend.py comments/' + token + ' ' + token, shell=True)
+
 			i += 1
 
 		return None
 
 	def empty_dir(self, path):
 		os.popen('rm -f ' + path + '/*')
-
-class Test:
-        def GET(self):
-		res = subprocess.call(['/Users/anurag/study/SEM-3/bds/proj/opt/dataService/phantomjs-2.0.0-macosx/bin/phantomjs', '/Users/anurag/study/SEM-3/bds/proj/opt/dataService/test.js', 'http://www.regulations.gov/#!documentDetail;D=ICEB-2015-0002-2258', ])
-		print res
-		return 'success'
 
 class Count:
 	def GET(self):
