@@ -41,13 +41,16 @@ class Fetch:
 		return 'success'
 
 	def extract_comments(self, comments_url, token):
+		subprocess.call('rm -r /Users/anurag/study/SEM-3/bds/proj/BDS-Project/comments/' + token, shell=True)
+		subprocess.call('cp -r ../data/ /Users/anurag/study/SEM-3/bds/proj/BDS-Project/comments/' + token, shell=True)
+
 		i = 15000
 		for url in comments_url:
 			print url
 			res = subprocess.call(['/Users/anurag/study/SEM-3/bds/proj/opt/dataService/phantomjs-2.0.0-macosx/bin/phantomjs', '/Users/anurag/study/SEM-3/bds/proj/BDS-Project/dataservice/test.js', url, str(i), token])
 
 			if (i%5 is 0):
-				subprocess.call('python ../backend.py comments/' + token + ' ' + token + ' /Users/anurag/study/SEM-3/bds/proj/BDS-Project', shell=True)
+				subprocess.call('python ../backend.py /Users/anurag/study/SEM-3/bds/proj/BDS-Project/comments/' + token + ' ' + token + ' /Users/anurag/study/SEM-3/bds/proj/BDS-Project', shell=True)
 
 			i += 1
 
@@ -58,13 +61,19 @@ class Fetch:
 
 class Count:
 	def GET(self):
-		DIR = '../comments'
+		user_data = web.input()
+		token = user_data.token
+
+		DIR = '../comments/' + token
 		res = len([name for name in os.listdir(DIR) if os.path.isfile(os.path.join(DIR, name))])
 		return res
 
 class Top:
 	def GET(self):
-		DIR = '../comments'
+		user_data = web.input()
+		token = user_data.token
+
+		DIR = '../comments/' + token
 		paths = [name for name in os.listdir(DIR) if os.path.isfile(os.path.join(DIR, name))]
 		contents = []
 		res = []
