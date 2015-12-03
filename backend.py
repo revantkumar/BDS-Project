@@ -115,7 +115,7 @@ def do_stuff(data_path, token):
     TEST_ROOT=os.path.join(DATA_ROOT, "test_set")
     STOP_WORDS_FILE="stop-word-list.txt"
     '''
-    DIR_ROOT=""
+    DIR_ROOT="/Users/anurag/study/SEM-3/bds/proj/BDS-Project/"
     MODEL_ROOT=os.path.join(DIR_ROOT, "model")
     TRAIN_ROOT=os.path.join(MODEL_ROOT, "train")
     DEV_ROOT=os.path.join(MODEL_ROOT, "dev")
@@ -124,7 +124,7 @@ def do_stuff(data_path, token):
     DATA_ROOT=os.path.join(DIR_ROOT, data_path)
     FIRST_NAMES_ROOT=os.path.join(DIR_ROOT, "names")
     LAST_NAMES_FILE=os.path.join(DIR_ROOT, "names_census", "app.txt")
-    STOP_WORDS_FILE="stop-word-list.txt"
+    STOP_WORDS_FILE="/Users/anurag/study/SEM-3/bds/proj/BDS-Project/stop-word-list.txt"
 
     print("Loading data...")
     # No names in train/dev/test set

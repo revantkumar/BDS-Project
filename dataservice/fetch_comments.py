@@ -15,8 +15,11 @@ urls = (
 
 class Fetch:
 	def GET(self):
+		subprocess.call('python ../backend.py', shell=True)
+
 		user_data = web.input()
 		url = user_data.url
+		token = user_data.token
 		print url
 
 		comment_urls = []
@@ -37,15 +40,14 @@ class Fetch:
 			index += 1
 
 		print len(comment_urls)
-		self.extract_comments(comment_urls)
+		self.extract_comments(comment_urls, token)
 		return 'success'
 
-	def extract_comments(self, comments_url):
+	def extract_comments(self, comments_url, token):
 		i = 15000
-		self.empty_dir('../comments')
 		for url in comments_url:
 			print url
-			res = subprocess.call(['/Users/anurag/study/SEM-3/bds/proj/opt/dataService/phantomjs-2.0.0-macosx/bin/phantomjs', '/Users/anurag/study/SEM-3/bds/proj/opt/dataService/test.js', url, str(i)])
+			res = subprocess.call(['/Users/anurag/study/SEM-3/bds/proj/opt/dataService/phantomjs-2.0.0-macosx/bin/phantomjs', '/Users/anurag/study/SEM-3/bds/proj/opt/dataService/test.js', url, str(i), token])
 			i += 1
 
 		return None
@@ -80,14 +82,14 @@ class Top:
 		size = len(contents)
 		print size
 		if size < 100:
-			return contents
+			return "~~".join(contents)
 		else:
 			for i in range(100):
 				index = random.randint(0, size-1)
 				print index
 				res.append(contents[index])
 
-			return "~".join(res)
+			return "~~".join(res)
 
 if __name__ == "__main__":
 	app = web.application(urls, globals())

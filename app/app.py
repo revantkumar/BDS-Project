@@ -15,7 +15,7 @@ import locale
 # import MySQLdb as mdb
 
 app = Flask(__name__)
-locale.setlocale(locale.LC_ALL, 'en_US.utf8')
+locale.setlocale(locale.LC_ALL, 'en_US')
 
 def get_cursor():
     base_dir = os.path.dirname(os.path.realpath(__file__))
@@ -70,6 +70,7 @@ def indexMain():
     cursor.execute(q)
     row = cursor.fetchone()
     resp = 0
+    totc = 0
     if not row:
         active_count = 0
     else:
@@ -77,10 +78,11 @@ def indexMain():
         # TODO uncomment this
         resp = int(requests.get('http://localhost:8080/get_count').text)
         total_comments += resp
+	totc = resp
 
 
     total_comments = locale.format("%d", total_comments, grouping=True)
-    return render_template('index.html', analysis=obj_arr, acount=active_count, cprocessed = comments_processed, cfetched=total_comments)
+    return render_template('index.html', analysis=obj_arr, acount=active_count, totc=totc, cprocessed = comments_processed, cfetched=total_comments)
 
 @app.route('/start-analysis', methods=['GET', 'POST', 'REQUEST'])
 def startAnalysis():
