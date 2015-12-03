@@ -100,7 +100,7 @@ def startAnalysis():
     db.commit()
     url = urllib.urlencode({'url': docketlink})
     session_f = FuturesSession()
-    future_one = session_f.get('http://localhost:8080/fetch_comments?' + url + '&id=' + str(cursor.lastrowid))
+    future_one = session_f.get('http://localhost:8080/fetch_comments?' + url + '&token=' + str(cursor.lastrowid))
     # urls = ['http://localhost:8080/fetch_comments?' + url]
     # rs = (grequests.get(u) for u in urls)
     # grequests.map(rs)

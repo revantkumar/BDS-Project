@@ -417,7 +417,7 @@ def do_stuff(data_path, token, dir_root):
         freqs = get_word_freq(X_data, y_eval==label)
         fstr = ""
 
-        with open("results/words.{}.txt".format(suffixes[label]), "w") as f:
+        with open("%s/results/words.{}.txt" % dir_root.format(suffixes[label]), "w") as f:
             total = np.sum([pair[1] for pair in freqs])
             f.writelines(map(lambda x: "%s\t%d\t%f\n" % (x[0], x[1], (x[1]*100)/float(total)), freqs))
             
