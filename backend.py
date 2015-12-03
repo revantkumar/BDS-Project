@@ -115,9 +115,9 @@ def do_stuff(data_path, token, dir_root):
     TEST_ROOT=os.path.join(DATA_ROOT, "test_set")
     STOP_WORDS_FILE="stop-word-list.txt"
     '''
-    #DIR_ROOT="/Users/anurag/study/SEM-3/bds/proj/BDS-Project/"
+    DIR_ROOT=dir_root
 
-    DIR_ROOT=""
+    #DIR_ROOT=""
     MODEL_ROOT=os.path.join(DIR_ROOT, "model")
     TRAIN_ROOT=os.path.join(MODEL_ROOT, "train")
     DEV_ROOT=os.path.join(MODEL_ROOT, "dev")
@@ -126,8 +126,8 @@ def do_stuff(data_path, token, dir_root):
     DATA_ROOT=os.path.join(DIR_ROOT, data_path)
     FIRST_NAMES_ROOT=os.path.join(DIR_ROOT, "names")
     LAST_NAMES_FILE=os.path.join(DIR_ROOT, "names_census", "app.txt")
-    #STOP_WORDS_FILE="/Users/anurag/study/SEM-3/bds/proj/BDS-Project/stop-word-list.txt"
-    STOP_WORDS_FILE="stop-word-list.txt"
+    STOP_WORDS_FILE=dir_root+"/stop-word-list.txt"
+    #STOP_WORDS_FILE="stop-word-list.txt"
 
     print("Loading data...")
     # No names in train/dev/test set
@@ -575,7 +575,7 @@ def do_stuff(data_path, token, dir_root):
         plt.legend()
         #plt.show()
         #raw_input('Check check 5')
-        plt.savefig("%s/app/static/images/analysis/2-%s-%s.png" % (dir_root, token, label), format='png')
+        plt.savefig("%s/app/static/images/analysis/2-%s-%s.png" % (dir_root, label, token), format='png')
 
 
 # import dill
