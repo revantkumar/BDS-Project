@@ -591,10 +591,42 @@ def do_stuff(data_path, token, dir_root):
 # import dill
 # dill.dump(P, open("model/P.p", "wb" ))
 # dill.dump(Pc, open("model/Pc.p", "wb" ))
+from os import path
+from wordcloud import WordCloud
+import image
+
+def createClouds(dir_root, results_path, token):
+
+    def create(name_of_file):
+        # Read the whole text.
+        text = open(path.join(results_path, name_of_file)).read()
+
+        # Generate a word cloud image
+        wordcloud = WordCloud().generate(text)
+
+        # Display the generated image:
+        # the matplotlib way:
+        import matplotlib.pyplot as plt
+        plt.imshow(wordcloud)
+        plt.axis("off")
+
+        # take relative word frequencies into account, lower max_font_size
+        wordcloud = WordCloud(max_font_size=40, relative_scaling=.5).generate(text)
+        plt.figure()
+        plt.imshow(wordcloud)
+        plt.axis("off")
+        #plt.show()
+        plt.savefig("%s/app/static/images/analysis/%s-%s.png" % (dir_root, name_of_file, token), format='png')
+
+    create('cloud.neg.txt')
+    create('cloud.pos.txt')
+    create('cloud.exc.neg.txt')
+
+
 
 
 if __name__ == "__main__":
     do_stuff(str(sys.argv[1]), str(sys.argv[2]), str(sys.argv[3]))
-
+    createClouds(str(sys.argv[3]), str(sys.argv[3])+'/results', str(sys.argv[2]))
 
 
