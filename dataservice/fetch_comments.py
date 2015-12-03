@@ -47,7 +47,7 @@ class Fetch:
 			res = subprocess.call(['/Users/anurag/study/SEM-3/bds/proj/opt/dataService/phantomjs-2.0.0-macosx/bin/phantomjs', '/Users/anurag/study/SEM-3/bds/proj/BDS-Project/dataservice/test.js', url, str(i), token])
 
 			if (i%5 is 0):
-				subprocess.call('python ../backend.py comments/' + token + ' ' + token, shell=True)
+				subprocess.call('python ../backend.py comments/' + token + ' ' + token + ' /Users/anurag/study/SEM-3/bds/proj/BDS-Project', shell=True)
 
 			i += 1
 
