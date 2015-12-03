@@ -8,7 +8,7 @@ import math
 
 from nltk.stem.lancaster import LancasterStemmer
 
-def do_stuff():
+def do_stuff(data_path, token):
     '''
     Loads the Congressional Speech Data with labels
     @param root_dir Root directory of the files containing the speech text data
@@ -121,7 +121,7 @@ def do_stuff():
     DEV_ROOT=os.path.join(MODEL_ROOT, "dev")
     TEST_ROOT=os.path.join(MODEL_ROOT, "test")
 
-    DATA_ROOT=os.path.join(DIR_ROOT, "data")
+    DATA_ROOT=os.path.join(DIR_ROOT, data_path)
     FIRST_NAMES_ROOT=os.path.join(DIR_ROOT, "names")
     LAST_NAMES_FILE=os.path.join(DIR_ROOT, "names_census", "app.txt")
     STOP_WORDS_FILE="stop-word-list.txt"
@@ -331,7 +331,7 @@ def do_stuff():
         plt.plot(np.array(plt_percentiles), np.array(plt_neg_US), label="Negatives among US")
 
         plt.legend(loc='center left', bbox_to_anchor=(1, .5))
-        plt.savefig('graphs/Graphs.png', format='png')
+        plt.savefig('graphs/%s-1.png' % token, format='png')
 
 
     min_first = np.percentile([occ for name, occ in first_name_cache.iteritems()], percentile)
@@ -484,7 +484,7 @@ def do_stuff():
 
     # plt.tight_layout()
     #plt.show()
-    plt.savefig('graphs/Word-occurence.png', format='png')
+    plt.savefig('graphs/%s-2.png' % token, format='png')
 
 
     # Confirm the Zipf's law
@@ -499,7 +499,7 @@ def do_stuff():
     plt.ylabel("Frequency of occurence")
     plt.plot(np_rank, np_occ)
     #plt.show()
-    plt.savefig('graphs/Log-log-rank.png', format='png')
+    plt.savefig('graphs/%s-3.png' % token, format='png')
 
 
     # Stats: Words in -ve reviews that are not in +ve reviews
@@ -572,7 +572,7 @@ def do_stuff():
         plt.legend()
         #plt.show()
         #raw_input('Check check 5')
-        plt.savefig("graphs/Frequency-%s-labeled-comments.png" % label, format='png')
+        plt.savefig("graphs/%s-4-%s.png" % (token, label), format='png')
 
 
 # import dill
@@ -581,7 +581,7 @@ def do_stuff():
 
 
 if __name__ == "__main__":
-    do_stuff()
+    do_stuff(str(sys.argv[1]), str(sys.argv[2]))
 
 
 
