@@ -11,6 +11,7 @@ import requests
 import grequests
 import urllib
 import locale
+from requests_futures.sessions import FuturesSession
 # from flask.ext.mysql import MySQL
 # import MySQLdb as mdb
 
@@ -77,6 +78,7 @@ def indexMain():
         active_count = row['cnt']
         # TODO uncomment this
         resp = int(requests.get('http://localhost:8080/get_count').text)
+        # resp = 0
         total_comments += resp
 	totc = resp
 
@@ -97,9 +99,11 @@ def startAnalysis():
     cursor.execute(q, (session['uid'], docketlink, dockettag,))
     db.commit()
     url = urllib.urlencode({'url': docketlink})
-    urls = ['http://localhost:8080/fetch_comments?' + url]
-    rs = (grequests.get(u) for u in urls)
-    grequests.map(rs)
+    session_f = FuturesSession()
+    future_one = session_f.get('http://localhost:8080/fetch_comments?' + url + '&id=' + str(cursor.lastrowid))
+    # urls = ['http://localhost:8080/fetch_comments?' + url]
+    # rs = (grequests.get(u) for u in urls)
+    # grequests.map(rs)
     return redirect(url_for('indexMain'))
 
 @app.route('/detailed_analysis', methods=['GET', 'POST', 'REQUEST'])
@@ -123,6 +127,7 @@ def detailedAnalysis():
     comments = ''
     ## TODO uncomment
     resp = int(requests.get('http://localhost:8080/get_count').text)
+    # resp = 0
     if resp:
         cfetched += int(resp)
 
@@ -144,13 +149,15 @@ def detailedAnalysis():
             obj_arr.append(obj)
 
     comments = obj_arr
-    # docketlink = request.form['docketlink']
-    # dockettag = request.form['dockettag']
-    # q = "INSERT INTO active_analysis (uid, link, tag) VALUES (?, ?, ?)"
-    # print cursor
-    # cursor.execute(q, (session['uid'], docketlink, dockettag,))
-    # db.commit()
-    return render_template('detailed-analysis.html', cfetched=cfetched, comments=comments, tag=tag)
+    base_path = os.path.dirname(os.path.abspath(__file__))
+    graphnames = ['1' , '2-0', '2-1', '3']
+    valid_graphs = []
+    for graph in graphnames:
+        graph_path = base_path + graph + str(analysis_id)
+        if os.path.isfile(graph_path + '.png'):
+            valid_graphs.append(graph)
+
+    return render_template('detailed-analysis.html', cfetched=cfetched, comments=comments, tag=tag, valid_graphs=valid_graphs, analysis_id=analysis_id)
 
 
 

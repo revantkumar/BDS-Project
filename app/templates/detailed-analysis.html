@@ -350,7 +350,7 @@
 
                     <div class="row">
 
-                      <div class="col-md-12 col-sm-4 col-xs-12">
+                      <div class="col-md-12 col-sm-4 col-xs-12" >
                         <div class="x_panel">
                             <div class="x_title">
                                 <h2>Recent Comments <small></small></h2>
@@ -371,7 +371,7 @@
                                 </ul>
                                 <div class="clearfix"></div>
                             </div>
-                            <div class="x_content">
+                            <div class="x_content" style="height:300px;overflow:auto;">
                                 <div class="dashboard-widget-content">
 
                                     <ul class="list-unstyled timeline widget">
@@ -398,6 +398,222 @@
                         </div>
                     </div>
 
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="dashboard_graph x_panel">
+                                <div class="row x_title">
+                                    <div class="col-md-6">
+                                        <h3>Top 20 Words <!-- <small>Graph title sub-title</small> --></h3>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                                            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                            <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="x_content">
+                                    <div class="demo-container" style="height:470px">
+                                        <div id="placeholder3xx3-18" class="demo-placeholder" style="width: 100%; height:470px;">
+                                          {% if '1' in valid_graphs %}
+                                          <img src="./static/images/analysis/1-{{analysis_id}}.png" height="467px" width="100%"/>
+                                          {% else %}
+                                          <h5> Processing ...</h5>
+                                          {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if '1' in valid_graphs %}
+                    <div class="row">
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                          <div class="x_panel fixed_height_320">
+                              <div class="x_title">
+                                  <h2><font class="green">Supporting</font> Comments <small></small></h2>
+                                  <ul class="nav navbar-right panel_toolbox">
+                                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                      </li>
+                                      <li class="dropdown">
+                                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                          <ul class="dropdown-menu" role="menu">
+                                              <li><a href="#">Settings 1</a>
+                                              </li>
+                                              <li><a href="#">Settings 2</a>
+                                              </li>
+                                          </ul>
+                                      </li>
+                                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                      </li>
+                                  </ul>
+                                  <div class="clearfix"></div>
+                              </div>
+                              <div class="x_content">
+                                <img src="./static/images/analysis/wc1.png" height="237px" width="100%"/>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                          <div class="x_panel fixed_height_320">
+                              <div class="x_title">
+                                  <h2><font color="red">Opposing</font> Comments<small></small></h2>
+                                  <ul class="nav navbar-right panel_toolbox">
+                                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                      </li>
+                                      <li class="dropdown">
+                                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                          <ul class="dropdown-menu" role="menu">
+                                              <li><a href="#">Settings 1</a>
+                                              </li>
+                                              <li><a href="#">Settings 2</a>
+                                              </li>
+                                          </ul>
+                                      </li>
+                                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                      </li>
+                                  </ul>
+                                  <div class="clearfix"></div>
+                              </div>
+                              <div class="x_content">
+
+                                <img src="./static/images/analysis/wc2.png" height="237px" width="100%"/>
+
+                              </div>
+                          </div>
+                      </div>
+
+
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                          <div class="x_panel fixed_height_320">
+                              <div class="x_title">
+                                  <h2>Opposing Words <small>(Not in Supporting)</small></h2>
+                                  <ul class="nav navbar-right panel_toolbox">
+                                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                      </li>
+                                      <li class="dropdown">
+                                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                          <ul class="dropdown-menu" role="menu">
+                                              <li><a href="#">Settings 1</a>
+                                              </li>
+                                              <li><a href="#">Settings 2</a>
+                                              </li>
+                                          </ul>
+                                      </li>
+                                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                      </li>
+                                  </ul>
+                                  <div class="clearfix"></div>
+                              </div>
+                              <div class="x_content">
+
+                                <img src="./static/images/analysis/wc3.png" height="237px" width="100%"/>
+
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                    {% endif %}
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="col-md-8">
+                          <div class="row">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2><font class="green">Supporting</font> Names</h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Settings 1</a>
+                                                </li>
+                                                <li><a href="#">Settings 2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                  {% if '2-1' in valid_graphs %}
+                                  <img src="./static/images/analysis/2-1-{{analysis_id}}.png" height="240px" width="100%"/>
+                                  {% else %}
+                                  <h5> Processing ...</h5>
+                                  {% endif %}
+                                </div>
+                            </div>
+                          </div> <!-- row -->
+                          <div class="row">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2><font class="red">Opposing</font> Names</h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Settings 1</a>
+                                                </li>
+                                                <li><a href="#">Settings 2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+
+                                  {% if '2-0' in valid_graphs %}
+                                  <img src="./static/images/analysis/2-0-{{analysis_id}}.png" height="240px" width="100%"/>
+                                  {% else %}
+                                  <h5> Processing ...</h5>
+                                  {% endif %}
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="x_panel">
+                              <div class="x_title">
+                                  <h2>Power Law</h2>
+                                  <ul class="nav navbar-right panel_toolbox">
+                                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                      </li>
+                                      <li class="dropdown">
+                                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                          <ul class="dropdown-menu" role="menu">
+                                              <li><a href="#">Settings 1</a>
+                                              </li>
+                                              <li><a href="#">Settings 2</a>
+                                              </li>
+                                          </ul>
+                                      </li>
+                                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                      </li>
+                                  </ul>
+                                  <div class="clearfix"></div>
+                              </div>
+                              <div class="x_content">
+
+                                {% if '3' in valid_graphs %}
+                                <img src="./static/images/analysis/3-{{analysis_id}}.png" height="240px" width="100%"/>
+                                {% else %}
+                                <h5> Processing ...</h5>
+                                {% endif %}
+                              </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
 

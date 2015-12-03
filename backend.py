@@ -115,9 +115,9 @@ def do_stuff(data_path, token, dir_root):
     TEST_ROOT=os.path.join(DATA_ROOT, "test_set")
     STOP_WORDS_FILE="stop-word-list.txt"
     '''
-    #DIR_ROOT="/Users/anurag/study/SEM-3/bds/proj/BDS-Project/"
+    DIR_ROOT=dir_root
 
-    DIR_ROOT=""
+    #DIR_ROOT=""
     MODEL_ROOT=os.path.join(DIR_ROOT, "model")
     TRAIN_ROOT=os.path.join(MODEL_ROOT, "train")
     DEV_ROOT=os.path.join(MODEL_ROOT, "dev")
@@ -126,8 +126,8 @@ def do_stuff(data_path, token, dir_root):
     DATA_ROOT=os.path.join(DIR_ROOT, data_path)
     FIRST_NAMES_ROOT=os.path.join(DIR_ROOT, "names")
     LAST_NAMES_FILE=os.path.join(DIR_ROOT, "names_census", "app.txt")
-    #STOP_WORDS_FILE="/Users/anurag/study/SEM-3/bds/proj/BDS-Project/stop-word-list.txt"
-    STOP_WORDS_FILE="stop-word-list.txt"
+    STOP_WORDS_FILE=dir_root+"/stop-word-list.txt"
+    #STOP_WORDS_FILE="stop-word-list.txt"
 
     print("Loading data...")
     # No names in train/dev/test set
@@ -303,7 +303,7 @@ def do_stuff(data_path, token, dir_root):
         for percentile in PERCENTILES:
             amr = get_amr(names_data, first_name_cache, last_name_cache, percentile, exclude_intl_names)
 
-            with open("results/perc.%f.txt" % percentile, "w") as f:
+            with open("%s/results/perc.%f.txt" % (dir_root,percentile), "w") as f:
                 for i, name in enumerate(names_data):
                     if amr[i] == 1:
                         f.write(str(amr[i]) + ", " + str(names_data[i]) + ", VOTE=" + str(y_eval[i]) + "\n")
@@ -340,7 +340,7 @@ def do_stuff(data_path, token, dir_root):
     min_first = np.percentile([occ for name, occ in first_name_cache.iteritems()], percentile)
     min_last = np.percentile([occ for name, occ in last_name_cache.iteritems()], percentile)
 
-    with open("results/neg.not.us.txt", "w") as f:
+    with open("%s/results/neg.not.us.txt" % dir_root, "w") as f:
         for i, name in enumerate(names_data):
             if amr[i] == 0 and y_eval[i] == 0:
                 first_name, last_name = name
@@ -353,7 +353,7 @@ def do_stuff(data_path, token, dir_root):
     min_first = np.percentile([occ for name, occ in first_name_cache.iteritems()], percentile)
     min_last = np.percentile([occ for name, occ in last_name_cache.iteritems()], percentile)
 
-    with open("results/pos.us.txt", "w") as f:
+    with open("%s/results/pos.us.txt" % dir_root, "w") as f:
         for i, name in enumerate(names_data):
             if amr[i] == 1 and y_eval[i] == 1:
                 first_name, last_name = name
@@ -421,7 +421,7 @@ def do_stuff(data_path, token, dir_root):
             total = np.sum([pair[1] for pair in freqs])
             f.writelines(map(lambda x: "%s\t%d\t%f\n" % (x[0], x[1], (x[1]*100)/float(total)), freqs))
             
-        write_cloud(freqs[:TOP_K], "results/cloud.{}.txt".format(suffixes[label]))
+        write_cloud(freqs[:TOP_K], "%s/results/cloud.{}.txt" % dir_root.format(suffixes[label]))
 
 
     # Bar chart for word usage
@@ -528,7 +528,7 @@ def do_stuff(data_path, token, dir_root):
     for word_exc, count_exc in freqs_exc_neg[:TOP_K]:
         print word_exc, count_exc
 
-    write_cloud(freqs_exc_neg[:TOP_K], "results/cloud.exc.neg.txt")
+    write_cloud(freqs_exc_neg[:TOP_K], "%s/results/cloud.exc.neg.txt" % dir_root)
 
 
     # Stat: Who did we lose from 60 percentile to 90 percentile and what were their names and comments
@@ -575,7 +575,7 @@ def do_stuff(data_path, token, dir_root):
         plt.legend()
         #plt.show()
         #raw_input('Check check 5')
-        plt.savefig("%s/app/static/images/analysis/2-%s-%s.png" % (dir_root, token, label), format='png')
+        plt.savefig("%s/app/static/images/analysis/2-%s-%s.png" % (dir_root, label, token), format='png')
 
 
 # import dill
