@@ -1,0 +1,22 @@
+Monika Gibson, Virginia Polytechnic Institute and State University Clarification and expansion of qualifying CIP codes would be helpful. Current list does not include new, innovative, interdisciplinary programs that meet the intent but not the strict definition of STEM requirement.
+
+Length of time proposed would provide sufficient time to amass meaningful work experience. It would serve doctoral students seeking postdoc positions especially well (and would match current J-1 allowance of 18+18 months of academic training). While I support the spirit of the mentoring requirement, the proposed procedures seem impractical and almost prohibitively burdensome.
+
+The primary beneficiaries of the OPT extension are the student and the employer (and only in terms of global competitiveness U.S. universities, unless they are also the employer), but a significant portion of the burden of managing it would fall on schools, which at that point have no legal relationship with the student. Requiring schools to remain the intermediary between the student and SEVIS after the student graduates and applies for initial OPT seems illogical and unnecessary, and it places a significant and undue burden on schools and DSOs:
+- DSOs have no ability to verify whether any information submitted by the student is true or accurate.
+- DSOs add no new information of their own to the process; they simply transcribe and convey to SEVIS information they receive from the student, while introducing possibly transcription errors.
+- The new rule would allow students to apply for a STEM extension based on a degree earned from a prior institution, of which the OPT-processing institution may or may not have a record.
+- For an institution the size of Virgnia Tech there may be 200-400 or more students on OPT at any time, eligible for STEM extension. Managing 6-month reporting requirement would rarely be accomplished with a single communication from the student and one-time entry in SEVIS. More likely it would take multiple exchanges between the student and a DSO, even if the initial submission of information is complete and accurate. Thus the estimated burden on schools would be 0.5-1 hr per student per 6-month period, for up to three years after graduation. For 400 students that is 400-800 hours/year, or nearly 30% of a full-time equivalent position. If the DSO is to scrutinize the details of the mentoring plan and act as facilitator between student, employer and SEVIS, the burden could be even greater. 
+- The reporting every 6 months requirement needs to be better defined, and preferably simplified. Larger schools with multiple terms a year have students graduating and starting OPT practically at any time, so there isn't a uniform schedule (such as with enrollment reporting at the beginning of each term) to which students and DSOs could keep themselves and build administrative procedures for. Without such schedule the reporting would be entirely individual, and schools would not be able to create and adhere to a predictable and programmable schedule.
+
+For these reasons I strongly recommend the development of a student/employer interface with SEVIS, through which students could make all the necessary updates and receive status-related communications directly from SEVIS.
+
+The new rule extends the possible period of unemployment from 120-150 days, but it remains unclear how such periods are to be documented, and what the DSO's responsibility is in identifying and responding to such periods. 
+
+Comments on the proposed M&T Plan form:
+- It is unclear who is to complete section 1 on the plan.
+- It is unclear why the name of a DSO is needed on the form. Schools may have many DSOs, and a DSO named on the form may no longer be at the school when 6-month reporting times roll around.
+- It is unclear what the DSO's responsibility would be if the student reports that appropriate training and mentorship is not provided as promised in the plan. 
+- It is unclear what objective measures could establish whether a position is appropriate for OPT.
+- It is unclear who would define and enforce any objective measures of student and employer holding to the mentoring plan. 
+- Neither the form, nor the instructions state what is to be done with the form when it is completed. 

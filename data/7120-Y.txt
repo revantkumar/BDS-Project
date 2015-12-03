@@ -1,0 +1,12 @@
+Di Zhang STEM OPT extension ensures sufficient talents for companies.
+
+Do a simple math. In a typical statistic department, only around 20% of the graduate students are domestic. (Yes, that's true. International students are actually dominant in most graduate STEM programs)
+Suppose in one typical year, there're 50 graduate students graduating, out of whom 40 are international. 25 international students intended to stay and find a job. They're good, and they're not picky about jobs, and they don't change jobs often. 
+So there're 35 students trying to find a job, 10 domestic, 25 international. If there're 35 vacancy, then everyone's happy. 
+However, now there's no OPT extension and only 10 international students decide to stay and hunt a job. There would be 15 vacancies that can't be filled. 
+What can the employers do? 
+Option 1, wait another year for more domestic students to graduate. (10 more domestic students and )
+Option 2, hire 10 graduate students from less prominent universities.
+Option 3, hire undergraduate students. (since the proportion of domestic students is higher in undergraduate programs, there're more domestic applicants there.)
+
+Obvious, none of these options is satisfying. U.S. companies relies pretty much on international STEM students to fill their positions. I don't think it's a good idea to cancel their OPT extension.
