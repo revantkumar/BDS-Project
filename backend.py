@@ -564,13 +564,15 @@ def do_stuff(data_path, token, dir_root):
     TOP_K = 20
     index = np.arange(0, TOP_K*2, 2)
 
-    if len(np_freq) < TOP_K:
-        index = np.arange(0, len(np_freq)*2, 2)
-
     for label in labels:
         print("LABEL=%d" % label)
         names = get_top_names(names_data, y_eval == label)
         np_names, np_freq = zip(*names[:TOP_K])
+
+        if len(np_freq) < TOP_K:
+            index = np.arange(0, len(np_freq)*2, 2)
+        else:
+            index = np.arange(0, TOP_K*2, 2)
         
         plt.figure(figsize=(18,10))
         bar_width = 0.70
