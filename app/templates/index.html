@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>RCA Tool | </title>
+    <title>RCA Tool </title>
 
     <!-- Bootstrap core CSS -->
 
@@ -243,7 +243,7 @@
                             <li role="presentation" class="dropdown">
                                 <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-envelope-o"></i>
-                                    <span class="badge bg-green">6</span>
+                                    <span class="badge bg-green"></span>
                                 </a>
                                 <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
                                     <li>
@@ -346,7 +346,7 @@
                         <div class="left"></div>
                         <div class="right">
                             <span class="count_top"><i class="fa fa-file-word-o"></i> Unique Words</span>
-                            <div class="count">500</div>
+                            <div class="count">91,850</div>
                             <!-- <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span> -->
                         </div>
                     </div>
@@ -495,7 +495,11 @@
                           <div class="tile-stats">
                               <div class="icon"><i class="fa fa-comments-o"></i>
                               </div>
-                              <div class="count">{{item['count']}}</div>
+                               {%if item['status'] != 1 %}
+				<div class="count">{{totc}}</div>
+				{% else %}
+	                              <div class="count">{{item['count']}}</div>
+				{% endif %}
                               <h3>
                                 {{item['tag']}}
                                 {%if item['status'] != 1 %}

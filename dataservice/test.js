@@ -9,9 +9,10 @@ var args = system.args;
 console.log(args);
 url=args[1];
 index = args[2];
+token = args[3];
 
-var output = '../comments/' + index + '-y.txt'; // path for saving the local file 
-
+var output = '../comments/' token + '/' + index + '-y.txt'; // path for saving the local file 
+console.log(output);
 function waitFor(testFx, onReady, timeOutMillis) {
     var maxtimeOutMillis = timeOutMillis ? timeOutMillis : 3000, //< Default Max Timout is 3s
         start = new Date().getTime(),
