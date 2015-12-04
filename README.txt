@@ -42,3 +42,31 @@ The above starts the server at `port 8080` through which the endpoints can be ac
 
 3. Data Analysis Engine
 
+
+The data analysis engine is built using Python and multiple internal Python libraries like: 
+
+1. Numpy
+2. MatplotLib
+3. NLTK
+4. Wordcloud.
+
+The data analysis engine is called by the data services engine. The data analysis engine can also be called directly from the terminal too.
+
+python backend.py token data full_path_to_directory
+
+token : The identifier token that is transferred all the way from the front end and is used when saving the graphs and final outputs. 
+
+data: Name of the directory that contains all the data files. 
+
+full_path_to_directory: The full path to the directory containing the source code as well as the data files. 
+
+
+The following are the steps followed by the data analysis engine:
+
+1. Loads the training data, note that the training data needs to be in the folder named "train" inside the root folder. 
+2. Builds a machine learning model using naive bayes classifier. 
+3. Loads the testing data, note that the test data needs to be in the folder named from the system arguments given while calling the data analysis engine inside the root folder.
+4. Iterates through the test data one by one and predicts a label. 
+5. The analysis engine generates the graphs and plots for top 20 words and top supporting and opposing comments for the data and saves the text file for word cloud generation and also the graphs are saved in app/static/images/analysis using the "token" we get from the system arguments. 
+6. The word cloud generator is called which picks up the files words.neg.txt, words.pos.txt, words.exec.neg.txt to generate all the word clouds and these word clouds are also saved to app/static/images/analysis with the "token" we get from system arguments. 
+
