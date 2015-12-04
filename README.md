@@ -17,7 +17,9 @@ Flask is a python web-framework that provides the tools to build a powerful web 
 The data dashboard and control panel module along with the Flask framework code is available under `app/` directory.
 The module is executed using the following:  
 
-`python app.py`  
+```
+python app.py
+```
 
 The above starts the server at `port 5000`. The dashboard can be viewed by visiting `http://localhost:5000`.  
 The database file `appdb.db` provided contains a default user:`bds` and password:`bds`
@@ -33,7 +35,9 @@ This module uses a headless browser library `Phantom.js` to bypass several sessi
 
 The data collection and parsing engine's code with the `REST` endpoints are under `dataservice/` directory. The module is executed using the following:
 
-`python fetch_comments.py`
+```
+python fetch_comments.py
+```
 
 The above starts the server at `port 8080` through which the endpoints can be accessed and thus making the module features available.
 
