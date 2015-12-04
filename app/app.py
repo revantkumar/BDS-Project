@@ -165,7 +165,7 @@ def detailedAnalysis():
     graphnames = ['1' , '2-0', '2-1', '3']
     valid_graphs = []
     for graph in graphnames:
-        graph_path = base_path + graph + str(analysis_id)
+        graph_path = base_path + '/static/images/analysis/' +graph + '-' + str(analysis_id)
         if os.path.isfile(graph_path + '.png'):
             valid_graphs.append(graph)
 
