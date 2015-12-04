@@ -20,7 +20,7 @@ The module is executed using the following:
 `python app.py`  
 
 The above starts the server at `port 5000`. The dashboard can be viewed by visiting `http://localhost:5000`.  
-The database file `appdb.db` provided contains a default user:`bds` and with password:`bds`
+The database file `appdb.db` provided contains a default user:`bds` and password:`bds`
 #### 2. Data Collection and Parsing
 
 The data collection and parsing engine is built using a headless Webkit scriptable library, `Phantom.js` and Python's `Web.py` framework. `Web.py` is a powerful framework and is used in the RCA tool to build and provide REST endpoints. The endpoints serve as a connection for the front-end to interact with the data collection and data parsing module.  
